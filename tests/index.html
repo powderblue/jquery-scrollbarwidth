@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery-getscrollbarwidth</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="../jquery.getscrollbarwidth.min.js"></script>
+		<script>
+/*globals jQuery, window, document*/
+
+try {
+    jQuery.getScrollbarWidth();
+} catch (e) {
+    if (e.toString() === "The document isn't ready, so the scrollbar width cannot be calculated.") {
+        window.alert("As expected, an exception was thrown because the document isn't ready.");
+    } else {
+        window.alert("An unexpected error occurred.");
+    }
+}
+
+jQuery(document).ready(function () {
+    jQuery('#scrollbar_width').html(jQuery.getScrollbarWidth());
+});
+		</script>
+	</head>
+
+	<body>
+		<p>Scrollbar width is <strong id="scrollbar_width"></strong>px.</p>
+	</body>
+</html>
