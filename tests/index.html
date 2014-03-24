@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>jquery-getscrollbarwidth</title>
+		<title>jquery-scrollbarwidth</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="../jquery.getscrollbarwidth.min.js"></script>
+		<script src="../jquery.scrollbarwidth.js"></script>
 		<script>
 /*globals jQuery, window, document*/
 
 try {
-    jQuery.getScrollbarWidth();
+    jQuery.scrollbarWidth();
 } catch (e) {
     if (e.toString() === "The document isn't ready, so the scrollbar width cannot be calculated.") {
         window.alert("As expected, an exception was thrown because the document isn't ready.");
@@ -20,7 +20,7 @@ try {
 }
 
 jQuery(document).ready(function () {
-    jQuery('#scrollbar_width').html(jQuery.getScrollbarWidth());
+    jQuery('#scrollbar_width').html(jQuery.scrollbarWidth());
 });
 		</script>
 	</head>
